@@ -32,3 +32,5 @@ TODO :: will be solved using pattern 2
 2. [Max Consecutive Ones](./maxConsecutiveOne.md)
 3. [Fruit Basket](./fruitBasket.md)
 4. [Longest Repeating Character Replacement](./longestRepeatingCharacterReplacement.md)
+5. [Count of binary Subarray with given sum](binarySubarrayWithSum.md) \*\*\*
+6. [Minimum Substring window](./minimumSubstringWindow.md)

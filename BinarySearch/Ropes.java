@@ -42,12 +42,10 @@ public class Ropes{
             arr[i] = s.nextInt();
         }
 
-        Arrays.sort(arr);
-
         double low = 0;
-        double high = arr[n-1];
+        double high = 1e8; // max rope length is 1e7
 
-        for(int i = 0; i < 45; i++) {
+        for(int i = 0; i < 50; i++) {
             double mid = (low + high) / 2;
 
             if(isGood(arr, k, mid)) {
@@ -56,7 +54,7 @@ public class Ropes{
                 high = mid;
             }
         }
-        out.println(low);
+        out.printf("%.6f\n", low);
 
         out.close();
     }

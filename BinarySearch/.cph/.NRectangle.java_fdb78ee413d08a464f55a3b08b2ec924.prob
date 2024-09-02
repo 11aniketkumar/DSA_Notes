@@ -1,0 +1,1 @@
+{"name":"Local: NRectangle","url":"d:\\Programming\\DSA\\DSA_Notes\\BinarySearch\\NRectangle.java","tests":[{"id":1725302295985,"input":"2 3 10\n","output":"9\n"},{"id":1725304391984,"input":"1 3 1","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\DSA\\DSA_Notes\\BinarySearch\\NRectangle.java","group":"local","local":true}

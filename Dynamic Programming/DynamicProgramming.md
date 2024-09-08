@@ -19,7 +19,8 @@ Dynamic Programming is a technique in computer programming that helps to efficie
 ## [0-1 Knapsack](knapsack.md)
 
 -   Subset Sum
--   Equal Subset Sum Partition
+-   [Perfect Sum](./perfectSum.md) (Maybe it is same as Subset Sum)
+-   [Equal Subset Sum Partition](./equalSumPartition.md)
 -   Min Subset Sum Difference
 -   Count of Subset Sum
 -   [Target Sum](targetSum.md)

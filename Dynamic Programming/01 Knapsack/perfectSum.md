@@ -1,6 +1,6 @@
 # Perfect Sum
 
-[Dynamic Programming](DynamicProgramming.md)
+[Dynamic Programming](../DynamicProgramming.md)
 
 [GFG Problem Link](https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card)
 

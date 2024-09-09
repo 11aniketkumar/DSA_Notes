@@ -1,6 +1,6 @@
 # Minimum Sum Partition
 
-[Dynamic Programming](DynamicProgramming.md)
+[Dynamic Programming](../DynamicProgramming.md)
 
 -   Given an array arr of size n containing non-negative integers, the task is to divide it into two sets S1 and S2 such that the absolute difference between their sums is minimum and find the minimum difference
 -   [GFG Problem Link](https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card)
@@ -11,35 +11,35 @@
 -   We need to find the max possible subset sum `x` i.e less than or equal to half of sum of array. The more closer `x` is to the mid point, the smaller will be difference between `x` and `y`.
 -   The final difference can be given as:
 
-    $$
-    \text{diff} = x - y
-    $$
+$$
+\text{diff} = x - y \tag{1}
+$$
 
-    but,
+but,
 
-    $$
-    y = \text{sum} - x
-    $$
+$$
+y = \text{sum} - x \tag{2}
+$$
 
-    Therefore,
+Therefore, On Substituting $y$ from equation (2) into equation (1):
 
-    $$
-    \text{diff} = x - (\text{sum} - x)
-    $$
+$$
+\text{diff} = x - (\text{sum} - x)
+$$
 
-    $$
-    \text{diff} = 2x - \text{sum}
-    $$
+$$
+\text{diff} = 2x - \text{sum}
+$$
 
-    Since we know \( x \) will always be less than or equal to half of the sum, twice of \( x \) will also be less than or equal to the total sum at most. Therefore, the sum is always bigger than or equal to twice \( x \).
+Since we know \( x \) will always be less than or equal to half of the sum, twice of \( x \) will also be less than or equal to the total sum at most. Therefore, the sum is always bigger than or equal to twice \( x \).
 
-    We need the absolute value of the difference:
+We need the absolute value of the difference:
 
-    $$
-    \text{diff} = \text{sum} - 2x
-    $$
+$$
+\text{diff} = \text{sum} - 2x
+$$
 
-    `sum - 2x`, will be minimum for the greatest value of `x`, i.e `mid` point, to minimize `sum - 2x` means to maximize `x` as much as possible then remove `2x` from sum.
+`sum - 2x`, will be minimum for the greatest value of `x`, i.e `mid` point, to minimize `sum - 2x` means to maximize `x` as much as possible then remove `2x` from sum.
 
 ## Memoization
 

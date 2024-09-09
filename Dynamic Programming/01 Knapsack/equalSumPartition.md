@@ -1,6 +1,6 @@
 # Partition Equal Subset Sum
 
-[Dynamic Programming](DynamicProgramming.md)
+[Dynamic Programming](../DynamicProgramming.md)
 
 -   Given an array arr[] of size N, check if it can be partitioned into two parts such that the sum of elements in both parts is the same.
 -   [GFG Problem Link](https://www.geeksforgeeks.org/problems/subset-sum-problem2014/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card)

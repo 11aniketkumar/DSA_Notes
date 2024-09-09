@@ -18,11 +18,11 @@ Dynamic Programming is a technique in computer programming that helps to efficie
 
 ## [0-1 Knapsack](knapsack.md)
 
--   Subset Sum
--   [Perfect Sum](./perfectSum.md) (Maybe it is same as Subset Sum)
+-   Subset Sum - I think it's only about checking if a subset exists with sum `k`.
+-   Count of Subset Sum -Maybe it is same as <b>Perfect Sum</b>
+-   [Perfect Sum](./perfectSum.md) - Return count of subset with sum `k`.
 -   [Equal Subset Sum Partition](./equalSumPartition.md)
--   Min Subset Sum Difference
--   Count of Subset Sum
+-   [Min Subset Sum Difference](./minimumSumPartition.md) (Minimum Sum Partition)
 -   [Target Sum](targetSum.md)
 
 ## [Unbounded Knapsack](unboundedKnapsack.md)

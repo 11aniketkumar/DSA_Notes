@@ -6,12 +6,14 @@
 
 -   Given an array arr of size n of non-negative integers and an integer sum, the task is to count all subsets of the given array with a sum equal to a given sum.
 
-Note: Answer can be very large, so, output answer modulo 109+7.
+Note: Answer can be very large, so, output answer modulo 10<sup>9</sup>+7.
 
 ## Memoization
 
 ```java
 public int count(int[][] dp, int arr[], int sum, int n) {
+    // even if sum=0, i want it to try till last element
+    // maybe last element is 0, which won't decrease sum
     if((n <= 0) || (sum < 0)) {
         if(sum == 0) {
             return 1;

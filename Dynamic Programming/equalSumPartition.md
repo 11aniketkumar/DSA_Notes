@@ -8,21 +8,21 @@
 ## Memoization
 
 ```java
-static int isPossible(int[][] dp, int[] arr, int n, int sum) {
+static boolean isPossible(Boolean[][] dp, int[] arr, int n, int sum) {
     if(n == 0 || sum <= 0) {
         if(sum == 0) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
-    if(dp[n][sum] != -1) {
+    if(dp[n][sum] != null) {
         return dp[n][sum];
     }
 
-    int include = isPossible(dp, arr, n-1, sum - arr[n-1]);
-    int exclude = isPossible(dp, arr, n-1, sum);
-    return dp[n][sum] = Math.max(include, exclude);
+    boolean include = isPossible(dp, arr, n-1, sum - arr[n-1]);
+    boolean exclude = isPossible(dp, arr, n-1, sum);
+    return dp[n][sum] = include || exclude;
 }
 ```
 
@@ -43,15 +43,9 @@ static int equalPartition(int N, int arr[])
     }
 
     sum /= 2;
-    int[][] dp = new int[N+1][sum + 1];
+    Boolean[][] dp = new Boolean[N+1][sum + 1];
 
-    for(int i = 0; i < N+1; i++) {
-        for(int j = 0; j < sum + 1; j++) {
-            dp[i][j] = -1;
-        }
-    }
-
-    return isPossible(dp, arr, N, sum);
+    return isPossible(dp, arr, N, sum) ? 1 : 0;
 }
 ```
 
@@ -68,27 +62,42 @@ static int equalPartition(int N, int arr[])
         sum += arr[i];
     }
 
-    if(sum % 2 != 0) {
-        return 0;
-    }
+    if(sum % 2 != 0) return 0; // base exit condition
 
     sum /= 2;
-    int[][] dp = new int[N+1][sum + 1];
 
+    boolean[][] dp = new boolean[N+1][sum + 1];
+
+    // initializing
     for(int i = 0; i < N+1; i++) {
-        dp[i][0] = 1;
+        dp[i][0] = true;
     }
 
+    // filling the table
     for(int i = 1; i < N+1; i++) {
         for(int j = 1; j < sum+1; j++) {
             if(arr[i-1] <= j) {
-                dp[i][j] = Math.max(dp[i-1][j-arr[i-1]], dp[i-1][j]);
+                dp[i][j] = dp[i-1][j-arr[i-1]] || dp[i-1][j];
             } else {
                 dp[i][j] = dp[i-1][j];
             }
         }
     }
 
-    return dp[N][sum];
+    return dp[N][sum] ? 1 : 0;
+}
+```
+
+-   You can replace filling table part with the follow approach also
+
+```java
+for(int i = 1; i < N+1; i++) {
+    for(int j = 1; j < sum+1; j++) {
+        if((arr[i-1] <= j) && (dp[i-1][j-arr[i-1]])) {
+            dp[i][j] =  true;
+        } else {
+            dp[i][j] = dp[i-1][j];
+        }
+    }
 }
 ```

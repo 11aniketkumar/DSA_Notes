@@ -16,7 +16,7 @@ Dynamic Programming is a technique in computer programming that helps to efficie
 -   Min Jumps with Cost
 -   House Thief
 
-## [0-1 Knapsack](knapsack.md)
+## [0-1 Knapsack](./01%20Knapsack/knapsack.md)
 
 -   [Subset Sum](./01%20Knapsack/subsetSum.md)
 -   Count of Subset Sum -Maybe it is same as <b>Perfect Sum</b>

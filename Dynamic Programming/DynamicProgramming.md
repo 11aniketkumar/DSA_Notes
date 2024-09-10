@@ -25,11 +25,11 @@ Dynamic Programming is a technique in computer programming that helps to efficie
 -   [Min Subset Sum Difference](./01%20Knapsack/minimumSumPartition.md) (Minimum Sum Partition)
 -   [Target Sum](./01%20Knapsack/targetSum.md) - Count the number of subset with a given difference sum
 
-## [Unbounded Knapsack](unboundedKnapsack.md)
+## [Unbounded Knapsack](./Unbounded%20Knapsack/unboundedKnapsack.md)
 
--   [Rod Cutting](rodCutting.md)
--   Coin Change -> TODO :: Dynamic Programming 3 (1st question)
--   Min Coin Change
+-   [Rod Cutting](./Unbounded%20Knapsack/rodCutting.md)
+-   [Coin Change](./Unbounded%20Knapsack/countWaysOfCoinChange.md) - Total number of ways
+-   [Min Coin Change](./Unbounded%20Knapsack/minCoinChange.md)
 -   Max Ribbon Cut
 
 ## [LCS (Longest Common Subsequence)](lcs.md)

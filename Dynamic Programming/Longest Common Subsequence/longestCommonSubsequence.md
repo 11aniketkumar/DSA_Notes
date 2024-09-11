@@ -74,3 +74,43 @@ public int longestCommonSubsequence(String text1, String text2) {
     return dp[n][m];
 }
 ```
+
+# Print the Subsequence
+
+-   We can use two approaches to print the subsequence:
+    1.  <b>First Approach:</b> Take a `String` variable and While filling the `dp[][]` array, whenever the characters match, just add them to the `String`.
+
+```java
+String word = "";
+for(int i = 1; i < n+1; i++) {
+    for(int j = 1; j < m+1; j++) {
+        if(t1[i-1] == t2[j-1]) {
+            dp[i][j] = 1 + dp[i-1][j-1];
+            word += "" + t1[i-1];
+        } else {
+            dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+        }
+    }
+}
+System.out.println(word);
+```
+
+-   2. <b>Second Approach:</b> After the formation of `dp[][]` array, move from the bottom most right cell to top most left cell by following these rules:
+        - If the character matches, decrement both pointer.
+        - Else move towards the `max` value between `top` and `left` cell values.
+
+```java
+String word = "";
+while(n != 0 && m != 0) {
+    if(t1[n-1] == t2[m-1]) {
+        word = "" + t1[n-1] + word;
+        n--;
+        m--;
+    } else if (dp[n-1][m] > dp[n][m-1]) {
+        n--;
+    } else {
+        m--;
+    }
+}
+System.out.println(word);
+```

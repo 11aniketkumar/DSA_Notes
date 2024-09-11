@@ -1,8 +1,10 @@
 # Longest Commmon Subsequence (LCS)
-[Dynamic Programming](DynamicProgramming.md)
-* For any given two strings, find the length of the longest commong subsequence.
 
-``` java
+[Dynamic Programming](../DynamicProgramming.md)
+
+-   For any given two strings, find the length of the longest commong subsequence.
+
+```java
 public static void main(String[] args) {
     String str1 = "abcdge";
     String str2 = "abedg";
@@ -25,17 +27,21 @@ public static void main(String[] args) {
 }
 ```
 
-## Basic Recursion Code 
-* Time Complexity -> O( 2<sup>n+m</sup> ) -> O( 2<sup>max(n,m)</sup> ).
-* Space Complexity -> Number of nodes in recursion binary tree -> O(n+m).
-* When `str1` or `str2` is empty, the length of LCS will be 0.
-### Intiution: 
-* Check the last characters of both strings. If they match, add 1 to the length of the LCS and call the function for the strings without the last characters.
-* But, if the last character doesn't match then we get two cases:
-    - Remove the last character from `str1` and check again.
-    - Remove the last character from `str2` and check again.
-* The final answer will be the maximum of both the above cases.
-``` java
+## Basic Recursion Code
+
+-   Time Complexity -> O( 2<sup>n+m</sup> ) -> O( 2<sup>max(n,m)</sup> ).
+-   Space Complexity -> Number of nodes in recursion binary tree -> O(n+m).
+-   When `str1` or `str2` is empty, the length of LCS will be 0.
+
+### Intiution:
+
+-   Check the last characters of both strings. If they match, add 1 to the length of the LCS and call the function for the strings without the last characters.
+-   But, if the last character doesn't match then we get two cases:
+    -   Remove the last character from `str1` and check again.
+    -   Remove the last character from `str2` and check again.
+-   The final answer will be the maximum of both the above cases.
+
+```java
 public static int lcs(String str1, String str2, int n, int m) {
     if(n == 0 || m == 0) {
         return 0;
@@ -52,11 +58,13 @@ public static int lcs(String str1, String str2, int n, int m) {
 ```
 
 ## Memoization Code
-* Time Complexity -> O(n * m).
-* Space Complexity -> Array space + recursion stack space -> O(n * m) + O(n + m).
-* `dp[i][j]` represents the length of LCS when `str1` is of length `i` and `str2` is of length `j`.
-* Note: `dp[0][0]` doesn't store the result of comparing `str1[0]` and `str2[0]`; instead, it indicates the LCS length when `str1` and `str2` are both of length 0 or empty.
-``` java
+
+-   Time Complexity -> O(n \* m).
+-   Space Complexity -> Array space + recursion stack space -> O(n \* m) + O(n + m).
+-   `dp[i][j]` represents the length of LCS when `str1` is of length `i` and `str2` is of length `j`.
+-   Note: `dp[0][0]` doesn't store the result of comparing `str1[0]` and `str2[0]`; instead, it indicates the LCS length when `str1` and `str2` are both of length 0 or empty.
+
+```java
 public static int lcs(int[][] dp, String str1, String str2, int n, int m) {
     if(n == 0 || m == 0) {
         return 0;
@@ -77,10 +85,12 @@ public static int lcs(int[][] dp, String str1, String str2, int n, int m) {
 ```
 
 ## Tabulation Code
-* Time Complexity -> O(n * m).
-* Space Complexity -> O(n * m).
-* Initialization: `dp[i][j]=0` for `i=0` or `j=0`. It was skipped because default value of array in java is 0.
-``` java
+
+-   Time Complexity -> O(n \* m).
+-   Space Complexity -> O(n \* m).
+-   Initialization: `dp[i][j]=0` for `i=0` or `j=0`. It was skipped because default value of array in java is 0.
+
+```java
 public static int lcsTab(String str1, String str2) {
     int n = str1.length();
     int m = str2.length();

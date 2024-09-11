@@ -32,9 +32,9 @@ Dynamic Programming is a technique in computer programming that helps to efficie
 -   [Min Coin Change](./Unbounded%20Knapsack/minCoinChange.md)
 -   Max Ribbon Cut
 
-## [LCS (Longest Common Subsequence)](lcs.md)
+## [LCS (Longest Common Subsequence)](./Longest%20Common%20Subsequence/longestCommonSubsequence.md) || [first version](./Longest%20Common%20Subsequence/lcs.md)
 
--   [Longest Common Substring](longestCommonSubstring.md)
+-   [Longest Common Substring](./Longest%20Common%20Subsequence/longestCommonSubstring.md)
 -   Edit Distance
 -   Box Stacking
 -   Longest Increasing Subsequence

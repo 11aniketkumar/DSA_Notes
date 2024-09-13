@@ -22,7 +22,7 @@
 -   [Two Pointer & Sliding Window](./Two%20Pointer/twoPointer.md)
 -   Searching Algorithm (Linear, [Binary Search](./BinarySearch/BinarySearch.md), Ternary Search, Exponential Search)
 -   Sorting Algorithm (Bubble, Insertion, Selection, Merge, Quick, Counting, Radix, Heap)
--   Bit Manipulation
+-   [Bit Manipulation](bitManipulation.md)
 -   Greedy Algorithm
 -   Recursion
 -   Backtracking

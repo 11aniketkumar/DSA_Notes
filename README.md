@@ -2,6 +2,7 @@
 
 -   [Arrays](./Arrays/array.md)
 -   [Stack](Stack/Stack.md)
+-   [Bit Manipulation](bitManipulation.md)
 -   [Heaps](/Heaps/heaps.md)
 -   [Graph](Graph/graph.md)
 

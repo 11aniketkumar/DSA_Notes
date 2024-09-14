@@ -7,21 +7,15 @@
 -   If the `target` does not exist, it returns the index where it could be inserted.
 
 ```java
-public static int lowerBound(int[] arr, int num) {
-    int low = 0;
-    int high = arr.length - 1;
-
-    int mid;
-    while(low <= high) {
-        mid = (low + high) / 2;
-
-        if(arr[mid] >= num) {
-            high = mid - 1;
-        } else {
+public static int lowerBound(int[] arr, int x) {
+    int low = 0, high = arr.length;
+    while (low < high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] < x)
             low = mid + 1;
-        }
+        else
+            high = mid;
     }
-
     return low;
 }
 ```
@@ -33,19 +27,14 @@ public static int lowerBound(int[] arr, int num) {
 -   If the `target` does not exist, it returns the index where a greater element could be inserted.
 
 ```java
-public static int upperBound(int[] arr, int num) {
-    int low = 0;
-    int high = arr.length - 1;
-
-    int mid;
-    while(low <= high) {
-        mid = (low + high) / 2;
-
-        if(arr[mid] > num) {
-            high = mid - 1;
-        } else {
+public static int upperBound(int[] arr, int x) {
+    int low = 0, high = arr.length;
+    while (low < high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] <= x)
             low = mid + 1;
-        }
+        else
+            high = mid;
     }
     return low;
 }

@@ -12,13 +12,9 @@
 ## Number of Set Bits
 
 ```java
-import java.lang.Integer;
-import java.lang.Long;
-```
-
-```java
 int count = Integer.bitCount(7453);
 System.out.println(count);          // output - 8
+
 count = Long.bitCount((long)1e12);
 System.out.println(count);          // output - 13
 ```

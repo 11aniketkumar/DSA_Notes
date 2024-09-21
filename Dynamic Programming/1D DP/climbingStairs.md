@@ -1,11 +1,15 @@
 # Climbing Stairs
-[Dynamic Programming](DynamicProgramming.md)
-* Count all possible ways to reach nth stair. The person can either climb 1 or 2 stairs at a time.
+
+[Dynamic Programming](../DynamicProgramming.md)
+
+-   Count all possible ways to reach nth stair. The person can either climb 1 or 2 stairs at a time.
 
 ## Basic Recursion Code
-* Time Complexity -> O(2<sup>n</sup>)
-* Space Complexity -> recursion stack space which is n (array size). -> O(n)
-``` java
+
+-   Time Complexity -> O(2<sup>n</sup>)
+-   Space Complexity -> recursion stack space which is n (array size). -> O(n)
+
+```java
 public static int countWays(int n) {
     if(n==0) {
         return 1;
@@ -18,9 +22,11 @@ public static int countWays(int n) {
 ```
 
 ## Memoization Code
-* Time Complexity -> O(n)
-* Space Complexity -> n(array size) + recursion stack space. -> O(n) + O(n)
-``` java
+
+-   Time Complexity -> O(n)
+-   Space Complexity -> n(array size) + recursion stack space. -> O(n) + O(n)
+
+```java
 public static int countWays(int n, int[] ways) {
     if(n==0) return 1;
     if(n < 0) return 0;
@@ -35,10 +41,12 @@ public static int countWays(int n, int[] ways) {
 ```
 
 ## Tabulation Code
-* Time Complexity -> O(n)
-* Space Complexity -> n (array size). -> O(n)
-* Further optimization can reduce the space complexity to O(1). For calculation we only require last two values and not the complete array.
-``` java
+
+-   Time Complexity -> O(n)
+-   Space Complexity -> n (array size). -> O(n)
+-   Further optimization can reduce the space complexity to O(1). For calculation we only require last two values and not the complete array.
+
+```java
 public static int countWaysTab(int n) {
     int dp[] = new int[n+1];
     dp[0] = 1;
@@ -52,7 +60,8 @@ public static int countWaysTab(int n) {
 ```
 
 ## Main Method
-``` java
+
+```java
 public static void main(String[] args) {
     int n = 5;
     int ways[] = new int[n+1];

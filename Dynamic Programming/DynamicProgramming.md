@@ -8,13 +8,13 @@ Dynamic Programming is a technique in computer programming that helps to efficie
 -   Tabulation (Bottom Up) -> Iterative approach
     <br><br>
 
-## Fibonacci
+## Fibonacci / 1D DP
 
--   [Climbing Stairs](climbingStairs.md)
+-   [Climbing Stairs](./1D%20DP/climbingStairs.md)
 -   Number Factors
 -   Min Jumps to Reach the End
 -   Min Jumps with Cost
--   House Thief
+-   [House Robber](./1D%20DP/houseRobber.md)
 
 ## [0-1 Knapsack](./01%20Knapsack/knapsack.md)
 

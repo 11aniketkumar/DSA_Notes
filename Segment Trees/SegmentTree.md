@@ -1,11 +1,9 @@
--   Could have avoided taking arr[] as parameter, if like tree simply defined it as global variable.
--   getSum only uses arr[] parameter to get its length value, after all data for calculating sum is present in tree, which is global, you can calculate arr[] length directly by dividing tree length by 4.
 
 ```java
 import java.util.*;
 import java.io.*;
 
-public class ProblemA {
+public class SegmentTree {
     static class FastScanner {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer("");
@@ -35,92 +33,113 @@ public class ProblemA {
         }
     }
 
+    static class SGTree {
+        int[] tree;
 
-    static long[] tree;
-
-    public static void createTreeUtil(int[] arr, int idx, int start, int end) {
-        if(start == end) {
-            tree[idx] = arr[start];
-            return;
+        public SGTree(int size) {
+            this.tree = new int[4 * size + 1];
         }
 
-        int mid = start + (end - start) / 2;
-        createTreeUtil(arr, 2*idx+1, start, mid);
-        createTreeUtil(arr, 2*idx+2, mid+1, end);
+        public void build(int idx, int start, int end, int[] arr) {
+            if(start == end) {
+                tree[idx] = arr[start];
+                return;
+            }
 
-        tree[idx] = tree[2*idx+1] + tree[2*idx+2];
-    }
+            int mid = start + (end - start) / 2;
+            build(2 * idx + 1, start, mid, arr);
+            build(2 * idx + 2, mid + 1, end, arr);
 
-    public static void createTree(int[] arr) {
-        createTreeUtil(arr, 0, 0, arr.length - 1);
-    }
+            tree[idx] = Math.min(tree[2*idx+1], tree[2*idx+2]);
+        }
 
-    public static long query(int[] arr, int idx, int start, int end, int l, int r) {
-        if((l > end) || (r < start)) {
-            return 0;
-        } else if((start >= l) && (end <= r)) {
-            return tree[idx];
-        } else {
+        public int query(int idx, int start, int end, int l, int r) {
+            if(start > r || end < l) return Integer.MAX_VALUE;
+            if(start >= l && end <= r) return tree[idx];
+
+            int mid = start + (end - start) / 2;
+            int left = query(2*idx+1, start, mid, l, r);
+            int right = query(2*idx+2, mid+1, end, l, r);
+
+            return Math.min(left, right);
+        }
+
+        public void update(int idx, int start, int end, int i, int val) {
+            if(start == end) {
+                tree[idx] = val;
+                return;
+            }
+
             int mid = start + (end - start) / 2;
 
-            long left = query(arr, 2*idx+1, start, mid, l, r);
-            long right = query(arr, 2*idx+2, mid+1, end, l, r);
-            return left + right;
+            if(i <= mid) {
+                update(2*idx+1, start, mid, i, val);
+            } else {
+                update(2*idx+2, mid+1, end, i, val);
+            }
+            tree[idx] = Math.min(tree[2*idx+1], tree[2*idx+2]);
         }
     }
-
-    public static long getSum(int[] arr, int l, int r) {
-        return query(arr, 0, 0, arr.length-1, l, r);
-    }
-
-
-    public static void update(int[] arr, int idx, int start, int end, int i, int diff) {
-        if((i < start) || (i > end)) {
-            return;
-        }
-
-        tree[idx] += diff;
-
-        if(start != end) {
-            int mid = start + (end - start) / 2;
-            update(arr, 2*idx+1, start, mid, i, diff);
-            update(arr, 2*idx+2, mid+1, end, i, diff);
-        }
-    }
-
-    public static void updateTree(int[] arr, int i, int value) {
-        int diff = value - arr[i];
-        arr[i] = value;
-        update(arr, 0, 0, arr.length-1, i, diff);
-    }
-
 
     public static void main(String[] args) {
         PrintWriter out = new PrintWriter(System.out);
         FastScanner s = new FastScanner();
 
-        int n = s.nextInt();
-        int m = s.nextInt();
 
-        int[] arr = new int[n];
+        // taking first array input and building first segment tree
+        int n1 = s.nextInt();
 
-        for(int i = 0; i < n; i++) {
-            arr[i] = s.nextInt();
+        int[] arr1 = new int[n1];
+        for(int i = 0; i < n1; i++) {
+            arr1[i] = s.nextInt();
         }
 
-        tree = new long[4 * n];
-        createTree(arr);
+        SGTree seg1 = new SGTree(n1);
+        seg1.build(0, 0, n1-1, arr1);
 
-        for(int i = 0; i < m; i++) {
-            int operation = s.nextInt();
-            int a = s.nextInt();
-            int b = s.nextInt();
 
-            if(operation == 1) {
-                updateTree(arr, a, b);
+
+        // taking second array input and building second segment tree
+        int n2 = s.nextInt();
+        int[] arr2 = new int[n2];
+        for(int i = 0; i < n2; i++) {
+            arr2[i] = s.nextInt();
+        }
+
+        SGTree seg2 = new SGTree(n2);
+        seg2.build(0, 0, n2-1, arr2);
+
+
+        // number of queries
+        int q = s.nextInt();
+        for(int j = 0; j < q; j++) {
+            int type = s.nextInt();
+
+            if(type == 1) {
+                // range in first array
+                int l1 = s.nextInt();
+                int r1 = s.nextInt();
+
+                // range in second array
+                int l2 = s.nextInt();
+                int r2 = s.nextInt();
+
+                int min1 = seg1.query(0, 0, n1-1, l1, r2);
+                int min2 = seg2.query(0, 0, n2-1, l2, r2);
+                out.println(Math.min(min1, min2));
             } else {
-                out.println(getSum(arr, a, b-1));
-                out.flush();
+                // which array to update
+                int arrNo = s.nextInt();
+                int i = s.nextInt();
+                int val = s.nextInt();
+
+                if(arrNo == 1) {
+                    seg1.update(0, 0, n1-1, i, val);
+                    arr1[i] = val;
+                } else {
+                    seg2.update(0, 0, n2-1, i, val);
+                    arr2[i] =val;
+                }
             }
         }
 

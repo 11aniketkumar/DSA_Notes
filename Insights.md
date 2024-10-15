@@ -31,6 +31,9 @@ Combining terms and simplifying gives us:
 
 $$\text{Number of subarrays} = \frac{n(n + 1)}{2}$$
 
+<br><br><br>
+
+
 ## Bezout's Theorem
 
 Bezout's Theorem states that if `a` and `b` are integers and they are coprime (i.e., their greatest common divisor is 1), then for any integer `m`, there exist integers `x` and `y` such that:
@@ -47,11 +50,42 @@ $$ mn - m - n $$
 
 This theorem specifically requires that `m` and `n` be coprime. If `m` and `n` are not coprime, there are infinitely many numbers that cannot be expressed as a combination of `m` and `n`.
 
+<br><br><br>
+
+
 ## LCM and GCD
 
 -   The product of the least common multiple (LCM) of `a` and `b` and the greatest common divisor (GCD) of `a` and `b` is equal to the product of `a` and `b`.
 -   The GCD of any number and `1` is always `1`.
 -   The LCM of any number and `1` is always that number itself.
+
+<br>
+
+- <b>THEOREM:</b> If `d` divides both `a` and `b`, then `d` will also divide both `a + b` and `a - b` (assuming `a > b`).
+
+- <b>Proof:</b>
+
+    Let `a` and `b` be integers such that `d` divides both `a` and `b`. This means there exist integers `k` and `l` such that:
+
+    $$ a = d \cdot k \quad \text{and} \quad b = d \cdot l $$
+
+    1. **For the sum**:
+
+        $$a + b = d \cdot k + d \cdot l = d \cdot (k + l) $$
+
+    Since \( k + l \) is an integer, it follows that \( d \) divides \( a + b \).
+
+    2. **For the difference** (when \( a > b \)):
+
+    $$ a - b = d \cdot k - d \cdot l = d \cdot (k - l) $$
+
+    Since \( k - l \) is an integer, it follows that \( d \) divides \( a - b \).
+
+    Thus, if \( d \) divides both \( a \) and \( b \), it will also divide both their sum and their difference (when \( a > b \)).
+
+
+<br><br><br>
+
 
 ## Prime Numbers
 

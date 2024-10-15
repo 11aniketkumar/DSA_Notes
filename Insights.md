@@ -63,25 +63,18 @@ This theorem specifically requires that `m` and `n` be coprime. If `m` and `n` a
 
 - **THEOREM:** If `d` divides both `a` and `b`, then `d` will also divide both `a + b` and `a - b` (assuming `a > b`).
 
-- **Proof:**
-
-  Let `a` and `b` be integers such that `d` divides both `a` and `b`. This means there exist integers `k` and `l` such that:
-
+  **Proof:** Let `a` and `b` be integers such that `d` divides both `a` and `b`. This means there exist integers `k` and `l` such that:
+<br>
+  
   $$a = d \cdot k \quad \text{and} \quad b = d \cdot l$$
 
-  1. **For the sum:**
-
-     $$a + b = d \cdot k + d \cdot l = d \cdot (k + l)$$
-
-     Since \( k + l \) is an integer, it follows that \( d \) divides \( a + b \).
-
-  2. **For the difference** (when \( a > b \)):
-
-     $$a - b = d \cdot k - d \cdot l = d \cdot (k - l)$$
-
-     Since \( k - l \) is an integer, it follows that \( d \) divides \( a - b \).
+  $$a + b => (d \cdot k + d \cdot l) => d \cdot (k + l)$$
+  
+  $$a - b => (d \cdot k - d \cdot l) => d \cdot (k - l)$$
+  
 
   Thus, if \( d \) divides both \( a \) and \( b \), it will also divide both their sum and their difference (when \( a > b \)).
+
 
 
 <br><br><br>

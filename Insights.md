@@ -61,27 +61,27 @@ This theorem specifically requires that `m` and `n` be coprime. If `m` and `n` a
 
 <br>
 
-- <b>THEOREM:</b> If `d` divides both `a` and `b`, then `d` will also divide both `a + b` and `a - b` (assuming `a > b`).
+- **THEOREM:** If `d` divides both `a` and `b`, then `d` will also divide both `a + b` and `a - b` (assuming `a > b`).
 
-- <b>Proof:</b>
+- **Proof:**
 
-    Let `a` and `b` be integers such that `d` divides both `a` and `b`. This means there exist integers `k` and `l` such that:
+  Let `a` and `b` be integers such that `d` divides both `a` and `b`. This means there exist integers `k` and `l` such that:
 
-    $$ a = d \cdot k \quad \text{and} \quad b = d \cdot l $$
+  $$a = d \cdot k \quad \text{and} \quad b = d \cdot l$$
 
-    1. **For the sum**:
+  1. **For the sum:**
 
-        $$a + b = d \cdot k + d \cdot l = d \cdot (k + l) $$
+     $$a + b = d \cdot k + d \cdot l = d \cdot (k + l)$$
 
-    Since \( k + l \) is an integer, it follows that \( d \) divides \( a + b \).
+     Since \( k + l \) is an integer, it follows that \( d \) divides \( a + b \).
 
-    2. **For the difference** (when \( a > b \)):
+  2. **For the difference** (when \( a > b \)):
 
-    $$ a - b = d \cdot k - d \cdot l = d \cdot (k - l) $$
+     $$a - b = d \cdot k - d \cdot l = d \cdot (k - l)$$
 
-    Since \( k - l \) is an integer, it follows that \( d \) divides \( a - b \).
+     Since \( k - l \) is an integer, it follows that \( d \) divides \( a - b \).
 
-    Thus, if \( d \) divides both \( a \) and \( b \), it will also divide both their sum and their difference (when \( a > b \)).
+  Thus, if \( d \) divides both \( a \) and \( b \), it will also divide both their sum and their difference (when \( a > b \)).
 
 
 <br><br><br>

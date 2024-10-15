@@ -32,6 +32,10 @@ Dynamic Programming is a technique in computer programming that helps to efficie
 -   [Min Coin Change](./Unbounded%20Knapsack/minCoinChange.md)
 -   Max Ribbon Cut
 
+## DP on Grid
+
+## [3D DP](./3D%20DP/chocalatePickUp.md)
+
 ## [LCS (Longest Common Subsequence)](./Longest%20Common%20Subsequence/longestCommonSubsequence.md) || [first version](./Longest%20Common%20Subsequence/lcs.md)
 
 -   [Longest Common Substring](./Longest%20Common%20Subsequence/longestCommonSubstring.md)
@@ -54,4 +58,3 @@ Dynamic Programming is a technique in computer programming that helps to efficie
 
 ## Kadane's Algorithm (Arrays)
 
-## DP on Grid (2D Arrays)

@@ -58,12 +58,10 @@ public class LazySegmentTree {
         }
 
         public static void update(int idx, int start, int end, int l, int r, int val) {
-            if(idx >= tree.length) return;
-
             if(lazy[idx] != 0) {
                 tree[idx] += (end - start + 1) * lazy[idx];
                 
-                if((2 * idx + 2 < tree.length) && (start != end)) {
+                if(start != end) {
                     lazy[2 * idx + 1] += lazy[idx];
                     lazy[2 * idx + 2] += lazy[idx];
                 }
@@ -73,7 +71,7 @@ public class LazySegmentTree {
             if(l > end || r < start) return;
             if(l <= start && r >= end) {
                 tree[idx] += (end - start + 1) * val;
-                if((2 * idx + 2 < tree.length) && (start != end)) {
+                if(start != end) {
                     lazy[2 * idx + 1] += val;
                     lazy[2 * idx + 2] += val;
                 }
@@ -84,9 +82,7 @@ public class LazySegmentTree {
             update(2 * idx + 1, start, mid, l, r, val);
             update(2 * idx + 2, mid + 1, end, l, r, val);
 
-            if(2 * idx + 2 < tree.length) {
-                tree[idx] = tree[2 * idx + 1] + tree[2 * idx + 2];
-            }
+            tree[idx] = tree[2 * idx + 1] + tree[2 * idx + 2];
         }
 
         public static int query(int idx, int start, int end, int l, int r) {

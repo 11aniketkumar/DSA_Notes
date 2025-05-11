@@ -4,6 +4,59 @@
 
 -   Check if the required sum can be achieved using any sum of subset of the given array
 
+## Latest Code
+``` java
+class Solution {
+    static boolean subsetSum(Boolean[][] dp, int[] arr, int target, int n) {
+        if(target == 0) return true;
+        if(n <= 0) return false;
+        
+        // state already calculated
+        if(dp[n][target] != null) {
+            return dp[n][target];
+        }
+        
+        // exclude case
+        dp[n][target] = subsetSum(dp, arr, target, n-1);
+        
+        // include case -> only runs if exclude returned false
+        if(!dp[n][target] && target >= arr[n-1]) {
+            dp[n][target] = subsetSum(dp, arr, target - arr[n-1], n-1);
+        }
+        
+        return dp[n][target];
+    }
+    
+    static Boolean isSubsetSum(int arr[], int target) {
+        int n = arr.length;
+        Boolean[][] dp = new Boolean[n+1][target+1];
+        
+        // Memoization
+        // return subsetSum(dp, arr, target, arr.length);
+        
+        for(int i = 0; i < n+1; i++) {
+            dp[i][0] = true;
+        }
+        
+        for(int j = 1; j < target+1; j++) {
+            dp[0][j] = false;
+        }
+        
+        for(int i = 1; i < n+1; i++) {
+            for(int j = 1; j < target+1; j++) {
+                dp[i][j] = dp[i-1][j];
+                if(!dp[i][j] && j >= arr[i-1]) {
+                    dp[i][j] = dp[i-1][j-arr[i-1]];
+                }
+            }
+        }
+        
+        return dp[n][target];
+    }
+}
+```
+## Older Version
+
 ```java
 public static void main(String[] args) {
     int[] numbers = {4,2,7,1,3};

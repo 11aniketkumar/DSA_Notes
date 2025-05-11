@@ -58,3 +58,6 @@ Dynamic Programming is a technique in computer programming that helps to efficie
 
 ## Kadane's Algorithm (Arrays)
 
+## Atcoder DP contest
+
+-   [Problem J Sushi](./Atcoder%20DP%20contest/Sushi.md)

@@ -1,10 +1,10 @@
-# Permutations
-
-[Recursion and Backtracking](./recursion%20and%20backtracking.md)
+# [Recursion](./recursion%20and%20backtracking.md) / Permutations
 
 -   Given an array `nums` of distinct integers, return all the possible permutations. You can return the answer in any order.
 
 [LeetCode Problem Link](https://leetcode.com/problems/permutations/description/)
+
+-   Total Number of permutations = n _ (n-1) _ (n-2) _ ...... _ 2 \* 1
 
 # Using additional map Space
 
@@ -45,7 +45,7 @@ public List<List<Integer>> permute(int[] nums) {
 # Space Optimized Solution
 
 -   Time Complexity : `O(n! * n)`
--   Space Complexity : Only stack space
+-   Space Complexity : `O(1)`
     <br>Ignoring `ans` space, as instead of adding to it, we can directly print the cur
 
 ```java

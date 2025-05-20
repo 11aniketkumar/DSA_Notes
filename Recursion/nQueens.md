@@ -1,3 +1,5 @@
+# [Recursion](./recursion%20and%20backtracking.md) / nQueens
+
 ```java
 class Solution {
     public boolean checkPosition(int row, int col, boolean[][] board) {

@@ -1,14 +1,39 @@
-# [Arrays](array.md) / Generate All subSequences
+# [Recursion](./recursion%20and%20backtracking.md) / Generate All subSequences
 
 -   [Striver Youtube Link](https://www.youtube.com/watch?v=b7AYbpM5YrE)
 -   [Leetcode Problem Link](https://leetcode.com/problems/subsets/)
 
 Generate all subsequences for the given array.
 
+-   Total subsequences => 2 <sup>k</sup>
+-   Time and space complexity wise not much difference between both approaches, only difference is one is `recursive` while other is `iterative`.
+
+## Backtracking recursive Approach
+
+-   Time Complexity -> `O(2<sup>n</sup> . n)`
+-   Space Complexity -> Recursion stack space -> `O(n)`
+
+```java
+public void generate(int[] nums, List<List<Integer>> res, List<Integer> cur, int i) {
+    if(i == nums.length) {
+        res.add(new ArrayList<>(cur));
+        return;
+    }
+
+    // exclude condition
+    generate(nums, res, cur, i+1);
+
+    // include condition
+    cur.add(nums[i]);
+    generate(nums, res, cur, i+1);
+    cur.remove(cur.size() - 1);
+}
+```
+
 ## Power Set Approach
 
--   Time Complexity -> O(2<sup>n</sup> . n)
--   Space Complexity -> O(1)
+-   Time Complexity -> `O(2<sup>n</sup> . n)`
+-   Space Complexity -> `O(1)`
 -   Any given array can have 2<sup>n</sup> subsequences, exactly like using n bits you can form 2<sup>n</sup> unique combinations.
 -   Here also imagine, n positions that you need to fill with `0` or `1` i.e (pick that index element or not)
 

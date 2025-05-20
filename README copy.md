@@ -24,7 +24,7 @@
 -   Sorting Algorithm (Bubble, Insertion, Selection, Merge, Quick, Counting, Radix, Heap)
 -   [Bit Manipulation](bitManipulation.md)
 -   Greedy Algorithm
--   Recursion
+-   [Recursion & BackTracking](./Recursion/recursion%20and%20backtracking.md)
 -   Backtracking
 -   [Dynamic Programming](Dynamic%20Programming/DynamicProgramming.md)
 <br>

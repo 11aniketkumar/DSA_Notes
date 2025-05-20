@@ -8,6 +8,8 @@
 
 # Using additional map Space
 
+[Striver Youtube](https://www.youtube.com/watch?v=YK78FU5Ffjw)
+
 -   Time Complexity : `O(n! * n)`
 -   Space Complexity : `cur` + `visited` => `O(n) + O(n)`
     <br>Ignoring `ans` space, as instead of adding to it, we can directly print the cur
@@ -43,6 +45,8 @@ public List<List<Integer>> permute(int[] nums) {
 ```
 
 # Space Optimized Solution
+
+[Striver Youtube](https://www.youtube.com/watch?v=f2ic2Rsc9pU)
 
 -   Time Complexity : `O(n! * n)`
 -   Space Complexity : `O(1)`
